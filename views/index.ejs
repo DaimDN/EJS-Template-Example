@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoList Application </title>
-    <link rel="stylesheet" href="../public/css/styles.css">
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
    </head>
 <body>
-   <div class="box" id="heading">
-       <h1> <%= dateinfo %> </h1>
-   </div>
-   
-   <div class="box">
-      <% for(var i =0; i < listofitems.length; i ++){   %>
-        <div class="item">
-            <input type="checkbox">
-            <p> <%= listofitems[i] %></p>
-           </div>
+<%- include('../views/components/navbar')  %>
+<%- include('../views/components/main')  %> 
 
-      <% }  %>
-      
-    
-       <form class="item" action="/" method="post">
-        <input type="text" class="" placeholder="Click to add more items" name="newItem">
-        <button type="submit" name="button" >+</button>
-    </form>
-   </div>
+<div class="row container">
+    <div class="col-9">
+        <%- include('../views/components/submain')  %>
 
+    </div>
+    <div class="col-3">
+
+        <%- include('../views/components/sidebar')  %>
+    </div>
+
+</div>
+
+<%- include('../views/components/footer')  %> 
    
 </body>
 </html>
